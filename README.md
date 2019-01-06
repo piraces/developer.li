@@ -1,4 +1,4 @@
-# developer.li
+![Image of developer.li](https://github.com/piraces/developer.li/raw/master/logo.png)
 
 Repo for the developer.li website.
 
