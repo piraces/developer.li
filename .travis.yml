@@ -13,7 +13,7 @@ cache:
     - node_modules
 
 script:
-  - npm run-script build --prod
+  - npm run-script build:prod
   - mv dist/index.html dist/developerli/404.html
 deploy:
   provider: pages
