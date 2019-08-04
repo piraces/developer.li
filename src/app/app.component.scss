@@ -1,17 +1,98 @@
 .top-margin {
-    margin-top: 15px;
+  margin-top: 15px;
 }
 
 .bottom-margin {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .centered {
-    text-align: center;
+  text-align: center;
 }
 
 .medium-input {
-    width: 40vw;
-    margin-left: auto ;
-    margin-right: auto ;
+  width: 40vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body {
+  padding: 0 2rem;
+  margin: 0 2rem;
+}
+
+#devli > .container {
+  max-width: 980px;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+/* Main */
+.main-content {
+  margin-bottom: 4rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+footer a {
+  color: #333;
+  text-decoration: none;
+}
+
+h2 > a {
+  margin-right: 1rem;
+}
+
+.topic {
+  margin-bottom: 3rem;
+}
+
+.item {
+  margin-bottom: -1rem;
+}
+.item > * {
+  margin-bottom: 1.5rem !important;
+}
+
+/* Containers */
+.item.containers > .nes-container {
+  display: inline-block;
+  max-width: 400px;
+}
+
+/* Topic */
+h3.topic-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+h3.topic-title > i {
+  margin-right: 1.5rem;
+}
+
+@media screen and (max-width: calc(980px - 4rem)) {
+  header > .container {
+    margin: 0 4rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    margin: 2rem 0.5rem;
+    padding: 0;
+  }
+
+  header > .container {
+    margin: 0 0.5rem;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  #devli > .container {
+    margin-top: 190px;
+  }
 }

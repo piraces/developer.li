@@ -5,53 +5,134 @@
   </h1>
 </div>
 <div class="centered">
-  <p>Subdomains for developers</p>
+  <p>Open space and free resources for developers</p>
   <p></p>
 </div>
-<section class="nes-container with-title bottom-margin">
-  <h2 class="title">Check for free subdomains:</h2>
-  <div class="nes-field is-inline centered">
-    <input type="text" id="name_field" [ngClass]="getActualClass()" [(ngModel)]="subdomain" (keydown)="changeInput()"
-      (ngModelChange)="domainAvailable = false" (keyup.enter)="checkAvailability()">
-    <label for="name_field">.developer.li</label>
-  </div>
-  <div *ngIf="domainAvailableChecked == false">
-    <p style="color: red">{{subdomain}}.developer.li is not available</p>
-  </div>
-  <div *ngIf="domainAvailableChecked == true">
-    <p style="color: green">{{subdomain}}.developer.li is available!</p>
-  </div>
-  <div class="centered top-margin bottom-margin" *ngIf="!domainAvailable">
-    <button type="button" class="nes-btn is-primary" (click)="checkAvailability()">Check availability</button>
-  </div>
-  <div class="centered top-margin bottom-margin" *ngIf="domainAvailable">
-    <button type="button" class="nes-btn is-success">Hurray! Reserve subdomain</button>
-  </div>
-  <p>Powered by FreeDNS: <a target="_blank" href="https://freedns.afraid.org/">freedns.afraid.org</a></p>
-  <p>Check out more available domains in their <a target="_blank" href="https://freedns.afraid.org/domain/registry/">registry!</a></p>
-</section>
+<div id="devli">
+  <div class="container">
+    <div class="main-content">
+      <section class="topic">
+        <h2 id="goal"><a href="#goal">#</a>Goal</h2>
+        <p>
+          The main goal of developer.li is to offer an open & free space for devs to build their projects and ideas.
+        </p>
+        <p>
+          For that goal we provide free subdomains registrations for everyone and provide free resources for all.
+        </p>
+        <p>
+          This page is open to all type of contributions on GitHub, for improving the page or provide more resources.
+        </p>
+      </section>
+      <section class="topic">
+        <h2 id="subdomains"><a href="#subdomains">#</a>Subdomains</h2>
 
-<section class="nes-container with-title top-margin">
-  <h2 class="title">Instructions:</h2>
-  <div class="lists">
-    <ul class="nes-list is-circle">
-      <li>1 - <a target="_blank" href="https://freedns.afraid.org/signup/?plan=starter">Signup in FreeDNS</a> with a
-        valid email</li>
-      <li>2 - Confirm your account from the email received</li>
-      <li>3 - Go and register your first subdomain <a target="_blank" href="https://freedns.afraid.org/subdomain/edit.php?edit_domain_id=1271067&ls=1">here!</a></li>
-      <li>Extra: find extra domains to register in the main <a target="_blank" href="https://freedns.afraid.org/domain/registry/">registry!</a></li>
-    </ul>
+        <section class="nes-container with-title bottom-margin">
+
+          <h2 class="title">Check for available subdomains:</h2>
+          <div class="nes-field is-inline centered">
+            <input type="text" id="name_field" [ngClass]="getActualClass()" [(ngModel)]="subdomain"
+              (keydown)="changeInput()" (ngModelChange)="domainAvailable = false" (keyup.enter)="checkAvailability()">
+            <label for="name_field">.developer.li</label>
+          </div>
+          <div *ngIf="domainAvailableChecked == false">
+            <p style="color: red">{{subdomain}}.developer.li is not available</p>
+          </div>
+          <div *ngIf="domainAvailableChecked == true">
+            <p style="color: green">{{subdomain}}.developer.li is available!</p>
+          </div>
+          <div class="centered top-margin bottom-margin" *ngIf="!domainAvailable">
+            <button type="button" class="nes-btn is-primary" (click)="checkAvailability()">Check availability</button>
+          </div>
+          <div class="centered top-margin bottom-margin" *ngIf="domainAvailable">
+            <button type="button" class="nes-btn is-success"
+              onclick="location.href='https://freedns.afraid.org/'">Hurray! Reserve subdomain</button>
+          </div>
+          <p>Powered by FreeDNS: <a target="_blank" href="https://freedns.afraid.org/">freedns.afraid.org</a></p>
+          <p>Check out more available domains in their <a target="_blank"
+              href="https://freedns.afraid.org/domain/registry/">registry!</a></p>
+        </section>
+
+        <section class="nes-container with-title top-margin">
+          <h2 class="title">Instructions:</h2>
+          <div class="lists">
+            <ul class="nes-list is-circle">
+              <li>1 - <a target="_blank" href="https://freedns.afraid.org/signup/?plan=starter">Signup in FreeDNS</a>
+                with
+                a
+                valid email</li>
+              <li>2 - Confirm your account from the email received</li>
+              <li>3 - Go and register your first subdomain <a target="_blank"
+                  href="https://freedns.afraid.org/subdomain/edit.php?edit_domain_id=1271067&ls=1">here!</a></li>
+              <li>Extra: find extra domains to register in the main <a target="_blank"
+                  href="https://freedns.afraid.org/domain/registry/">registry!</a></li>
+            </ul>
+          </div>
+        </section>
+      </section>
+      <section class="topic">
+        <h2 id="dns"><a href="#dns">#</a>OpenNIC DNS Servers</h2>
+        <section class="nes-container">
+          Currently we are running two Tier 2 DNS servers with <a href="https://www.opennic.org/" target="_blank"
+            rel="noopener">OpenNIC</a>:
+          <div class="lists">
+            <ul class="nes-list is-circle">
+              <li>&nbsp;ns1.developer.li - (ns1.gr.fr.dns.opennic.glue)</li>
+              <li>&nbsp;ns2.developer.li - (ns1.li.de.dns.opennic.glue)</li>
+            </ul>
+          </div>
+          Both servers resolves OpenNIC TLDs, our current goal is to support DNS neutrality and avoid censorship. Secure
+          DNS servers with lastest security recommendations.
+          Also, both servers don't perform any type of logging.
+          <br><br>
+          Feel free using them using the IP addresses below:
+          <br><br>
+          - 164.132.45.112 / 2001:41d0:302:2200::735
+          <br>
+          - 51.89.22.36 / 2001:41d0:701:1100::21b5
+          <br><br>
+          <a href="http://status.dns.developer.li " target="_blank" rel="noopener">Check current status</a>
+        </section>
+      </section>
+      <section class="topic">
+        <h2 id="contribute"><a href="#contribute">#</a>Contributions</h2>
+
+        <section class="nes-container">
+          <div class="centered bottom-margin">
+            <button type="button" class="nes-btn" (click)="supportMe()">
+              <i class="nes-icon heart"></i>&nbsp;Support Me
+            </button>
+          </div>
+
+          <div class="centered top-margin bottom-margin">
+            <p>
+              Check me out in <a target="_blank" href="https://github.com/piraces/developer.li">Github!</a> <i
+                class="nes-octocat animate"></i>
+            </p>
+            <p>
+              Feel free to fork the project, open issues and PRs to improve the page!
+            </p>
+            <p>
+              Made using the <a target="_blank" href="https://github.com/nostalgic-css/NES.css">NES-style CSS
+                Framework</a>
+              and
+              Angular.
+            </p>
+          </div>
+        </section>
+
+
+      </section>
+    </div>
   </div>
-</section>
-
-<div class="centered top-margin bottom-margin">
-  <button type="button" class="nes-btn" (click)="supportMe()">
-    <i class="nes-icon heart"></i>&nbsp;Support Me
-  </button>
-</div>
-
-<div class="centered top-margin bottom-margin">
-  Made using the <a target="_blank" href="https://github.com/nostalgic-css/NES.css">NES-style CSS Framework</a> and Angular. <a target="_blank" href="https://github.com/piraces/developer.li">Check me out in Github! <i class="nes-octocat animate"></i></a>
 </div>
 
 <router-outlet></router-outlet>
+
+<footer>
+  <p>
+    <span>©&nbsp;{{actualYear}}</span>
+    <a href="https://github.com/piraces/developer.li" target="_blank" rel="noopener">&nbsp;developer.li&nbsp;</a>
+    <span>&nbsp;-&nbsp;</span>
+    <a href="https://twitter.com/piraces_" target="_blank" rel="noopener">&nbsp;@piraces_&nbsp;</a>
+  </p>
+</footer>

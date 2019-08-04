@@ -17,6 +17,7 @@ export class AppComponent {
   basePrefix = 'https://json.geoiplookup.io/';
   kofiURL = 'https://ko-fi.com/F1F8OBQ5';
   notOwned = 'DosArrest';
+  actualYear = new Date().getFullYear();
 
   constructor(private http: HttpClient, @Inject(DOCUMENT) private document: any) {
   }
