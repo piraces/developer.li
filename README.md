@@ -1,5 +1,7 @@
 ![Image of developer.li](https://github.com/piraces/developer.li/raw/master/logo.png)
 
+[![Build Status](https://travis-ci.org/piraces/developer.li.svg?branch=master)](https://travis-ci.org/piraces/developer.li)
+
 Repo for the developer.li website.
 
 developer.li offers free subdomains for developers, powered by [FreeDNS](https://freedns.afraid.org/).
