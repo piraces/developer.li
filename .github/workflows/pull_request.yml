@@ -9,7 +9,7 @@ jobs:
     - name: Filters for GitHub Actions-actor
       uses: actions/bin/filter@3c98a2679187369a2116d4f311568596d3725740
       with:
-        args: actor dependabot-preview
+        args: actor dependabot-preview[bot]
     - name: Auto Approve
       uses: hmarr/auto-approve-action@master
       env:
