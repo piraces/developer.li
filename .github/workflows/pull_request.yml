@@ -1,0 +1,20 @@
+on: pull_request
+name: Auto approve dependabot
+jobs:
+  filtersForGitHubActions-actor:
+    name: Filters for GitHub Actions-actor
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Filters for GitHub Actions-actor
+      uses: actions/bin/filter@3c98a2679187369a2116d4f311568596d3725740
+      with:
+        args: actor dependabot-preview
+    - name: Auto Approve
+      uses: hmarr/auto-approve-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+    - name: managedkaos/merge-pull-request@master
+      uses: managedkaos/merge-pull-request@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
