@@ -140,5 +140,8 @@
       }
     }
   },
-  "defaultProject": "developerli"
+  "defaultProject": "developerli",
+  "cli": {
+    "analytics": false
+  }
 }
