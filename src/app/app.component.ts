@@ -48,7 +48,7 @@ export class AppComponent {
         .subscribe(
           (data) => {
             let response = data as IPLookup;
-            if (response && !response.org.includes(this.notOwned)) {
+            if (response && !response.isp.includes(this.notOwned)) {
               this.domainAvailable = false;
               this.domainAvailableChecked = false;
             } else {
