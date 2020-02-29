@@ -47,7 +47,7 @@ export class AppComponent {
         .get(this.basePrefix + this.subdomain + this.baseDomain)
         .subscribe(
           (data) => {
-            let response = data as IPLookup;
+            const response = data as IPLookup;
             if (response && !response.isp.includes(this.notOwned)) {
               this.domainAvailable = false;
               this.domainAvailableChecked = false;

@@ -1,7 +1,6 @@
 language: node_js
 node_js:
-  - "10"
-dist: bionic
+  - "12"
 sudo: false
 
 branches:
@@ -13,7 +12,12 @@ cache:
     - node_modules
 
 script:
+  - npm install
+  - npm run lint
+  - npm run test
+  - npm run e2e
   - npm run-script build:prod
+
 deploy:
   provider: pages
   skip_cleanup: true
