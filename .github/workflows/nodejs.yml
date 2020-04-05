@@ -1,0 +1,35 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Publish to GitHub Pages
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js $node-version
+      uses: actions/setup-node@v1
+      with:
+        node-version: $node-version
+    - name: Install Packages
+    - run: npm ci
+    - name: Build prod
+    - run: npm run build:prod --if-present
+      env:
+        CI: true
+        node-verion: 12.x
+        
+    - uses: crazy-max/ghaction-github-pages@v1.3.0
+    - name: Deploy to Github Pages
+      with:
+        # Build directory to deploy
+        build_dir: ./dist
+        # Write the given domain name to the CNAME file
+        fqdn: developer.li
