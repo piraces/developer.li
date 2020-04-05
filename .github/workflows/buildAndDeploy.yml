@@ -13,15 +13,16 @@ jobs:
     - uses: actions/checkout@v2
     - name: Use Node.js $node-version
       uses: actions/setup-node@v1
+      env:
+        CI: true
+        node-verion: 12.x
       with:
         node-version: $node-version
     - name: Install Packages
       run: npm ci
     - name: Build prod
       run: npm run build:prod --if-present
-      env:
-        CI: true
-        node-verion: 12.x
+      
     - name: Deploy to Github Pages
       uses: crazy-max/ghaction-github-pages@v1.3.0
       with:
