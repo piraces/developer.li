@@ -17,7 +17,7 @@ jobs:
         CI: true
         node-verion: 12.x
       with:
-        node-version: $node-version
+        node-version: ${node-version}
     - name: Install Packages
       run: npm ci
     - name: Build prod
