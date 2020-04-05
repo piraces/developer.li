@@ -11,7 +11,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js $node-version
+    - name: Use Node.js 12.x
       uses: actions/setup-node@v1
       with:
         node-version: 12.x
@@ -26,6 +26,8 @@ jobs:
       uses: crazy-max/ghaction-github-pages@v1.3.0
       with:
         # Build directory to deploy
-        build_dir: ./dist
+        build_dir: dist
         # Write the given domain name to the CNAME file
         fqdn: developer.li
+      env:
+        GITHUB_PAT: ${{ secrets.GIT_PAT }}
