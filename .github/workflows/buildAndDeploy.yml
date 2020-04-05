@@ -16,9 +16,9 @@ jobs:
       with:
         node-version: $node-version
     - name: Install Packages
-    - run: npm ci
+      run: npm ci
     - name: Build prod
-    - run: npm run build:prod --if-present
+      run: npm run build:prod --if-present
       env:
         CI: true
         node-verion: 12.x
