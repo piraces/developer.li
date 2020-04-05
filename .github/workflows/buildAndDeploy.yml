@@ -22,9 +22,8 @@ jobs:
       env:
         CI: true
         node-verion: 12.x
-        
-    - uses: crazy-max/ghaction-github-pages@v1.3.0
     - name: Deploy to Github Pages
+      uses: crazy-max/ghaction-github-pages@v1.3.0
       with:
         # Build directory to deploy
         build_dir: ./dist
