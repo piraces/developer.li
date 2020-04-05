@@ -12,16 +12,7 @@ cache:
     - node_modules
 
 script:
-  - npm install
+  - npm ci
   - npm run lint
   - npm run test
   - npm run-script build:prod
-
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  local_dir: dist/developerli
-  fqdn: developer.li
-  on:
-    branch: master
