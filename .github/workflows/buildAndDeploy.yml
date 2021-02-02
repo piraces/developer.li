@@ -28,4 +28,4 @@ jobs:
         build_dir: dist/developerli
         fqdn: developer.li
       env:
-        GITHUB_PAT: ${{ secrets.GIT_PAT }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
