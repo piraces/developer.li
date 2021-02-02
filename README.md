@@ -1,7 +1,7 @@
 ![Image of developer.li](https://github.com/piraces/developer.li/raw/master/logo.png)
 
 ![Publish to GitHub Pages](https://github.com/piraces/developer.li/workflows/Publish%20to%20GitHub%20Pages/badge.svg?branch=master)
-[![Build Status](https://travis-ci.org/piraces/developer.li.svg?branch=master)](https://travis-ci.org/piraces/developer.li)
+![CI Build](https://github.com/piraces/developer.li/workflows/CI/badge.svg)
 
 Repo for the developer.li website.
 
