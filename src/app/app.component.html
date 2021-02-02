@@ -30,8 +30,8 @@
 
           <h2 class="title">Check for available subdomains:</h2>
           <div class="nes-field is-inline centered">
-            <input type="text" id="name_field" [ngClass]="getActualClass()" [(ngModel)]="subdomain"
-              (keydown)="changeInput()" (ngModelChange)="domainAvailable = false" (keyup.enter)="checkAvailability()">
+            <input type="url" id="name_field" [ngClass]="getActualClass()" [(ngModel)]="subdomain"
+              (keydown)="changeInput()" (ngModelChange)="domainAvailable = false" (keyup.enter)="checkAvailability()" required>
             <label for="name_field">.developer.li</label>
           </div>
           <div *ngIf="domainAvailableChecked == false">
@@ -40,8 +40,11 @@
           <div *ngIf="domainAvailableChecked == true">
             <p style="color: green">{{subdomain}}.developer.li is available!</p>
           </div>
+          <div class="centered top-margin bottom-margin" *ngIf="checkingAvailability">
+            <progress class="nes-progress" [value]="progress" max="100"></progress>
+          </div>
           <div class="centered top-margin bottom-margin" *ngIf="!domainAvailable">
-            <button type="button" class="nes-btn is-primary" (click)="checkAvailability()">Check availability</button>
+            <button type="button" [disabled]="checkingAvailability" [ngClass]="{'is-disabled': checkingAvailability}" class="nes-btn is-primary" (click)="checkAvailability()">Check availability</button>
           </div>
           <div class="centered top-margin bottom-margin" *ngIf="domainAvailable">
             <button type="button" class="nes-btn is-success"

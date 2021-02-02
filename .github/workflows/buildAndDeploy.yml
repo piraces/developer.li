@@ -23,11 +23,9 @@ jobs:
       run: npm run build:prod --if-present
       
     - name: Deploy to Github Pages
-      uses: crazy-max/ghaction-github-pages@v1.3.0
+      uses: crazy-max/ghaction-github-pages@v2
       with:
-        # Build directory to deploy
         build_dir: dist/developerli
-        # Write the given domain name to the CNAME file
         fqdn: developer.li
       env:
         GITHUB_PAT: ${{ secrets.GIT_PAT }}
