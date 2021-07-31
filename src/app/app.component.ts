@@ -19,11 +19,17 @@ export class AppComponent {
   subdomain: any;
   baseDomain = '.developer.li';
   basePrefix = 'https://json.geoiplookup.io/';
-  kofiURL = 'https://ko-fi.com/F1F8OBQ5';
+  kofiUrl = 'https://ko-fi.com/F1F8OBQ5';
+  registrySearchUrl = 'https://freedns.afraid.org/domain/registry/?sort=5&q=developer.li&submit=SEARCH';
   notOwned = 'Dosarrest';
   actualYear = new Date().getFullYear();
+  subdomainCount = 0;
 
   constructor(private http: HttpClient, @Inject(DOCUMENT) private document: any) {
+  }
+
+  ngOnInit() {
+    this.getSubdomainsNumber();
   }
 
   public changeInput() {
@@ -32,7 +38,7 @@ export class AppComponent {
   }
 
   public supportMe() {
-    this.document.location.href = this.kofiURL;
+    this.document.location.href = this.kofiUrl;
   }
 
   public getActualClass() {
@@ -59,6 +65,27 @@ export class AppComponent {
     clearInterval(this.progressBarInterval);
   }
 
+  public getSubdomainsNumber() {
+    this.http.get(this.registrySearchUrl, {responseType: 'text'}).subscribe(
+      (data) => {
+        if (data) {
+          const matches = data.match(/\([0-9]+\shosts\sin\suse\)/g);
+          if (matches && matches.length > 0) {
+            const subdomains = matches[0].replace('(', '').replace('hosts in use)', '').trim();
+            if (!isNaN(+subdomains)) {
+              this.subdomainCount = Number.parseInt(subdomains);
+            } else {
+              this.subdomainCount = 0;
+            }
+          }
+        }
+      },
+      (_) => {
+        this.subdomainCount = 0;
+      }
+    );
+  }
+
   public checkAvailability() {
     if (this.subdomain && this.subdomain.length > 0) {
       this.checkingAvailability = true;
@@ -71,8 +98,8 @@ export class AppComponent {
             const response = data as IPLookup;
 
             if (errorResponse && errorResponse.error && !errorResponse.success) {
-              this.domainAvailable = false;
-              this.domainAvailableChecked = false;
+              this.domainAvailable = true;
+              this.domainAvailableChecked = true;
             } else if (response && response.isp && !response.isp.toLowerCase().includes(this.notOwned.toLowerCase())) {
               this.domainAvailable = false;
               this.domainAvailableChecked = false;

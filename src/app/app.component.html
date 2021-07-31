@@ -25,7 +25,6 @@
       </section>
       <section class="topic">
         <h2 id="subdomains"><a href="#subdomains">#</a>Subdomains</h2>
-
         <section class="nes-container with-title bottom-margin">
 
           <h2 class="title">Check for available subdomains:</h2>
@@ -50,6 +49,7 @@
             <button type="button" class="nes-btn is-success"
               onclick="location.href='https://freedns.afraid.org/'">Hurray! Reserve subdomain</button>
           </div>
+          <p [hidden]="subdomainCount === 0">{{subdomainCount}} subdomains registered and counting!</p>
           <p>Powered by FreeDNS: <a target="_blank" href="https://freedns.afraid.org/">freedns.afraid.org</a></p>
           <p>Check out more available domains in their <a target="_blank"
               href="https://freedns.afraid.org/domain/registry/">registry!</a></p>
