@@ -1,6 +1,6 @@
-![Image of developer.li](https://github.com/piraces/developer.li/raw/master/logo.png)
+![Image of developer.li](https://github.com/piraces/developer.li/raw/main/logo.png)
 
-![Publish to GitHub Pages](https://github.com/piraces/developer.li/workflows/Publish%20to%20GitHub%20Pages/badge.svg?branch=master)
+![Publish to GitHub Pages](https://github.com/piraces/developer.li/workflows/Publish%20to%20GitHub%20Pages/badge.svg?branch=main)
 ![CI Build](https://github.com/piraces/developer.li/workflows/CI/badge.svg)
 
 Repo for the developer.li website.
