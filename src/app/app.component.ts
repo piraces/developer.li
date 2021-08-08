@@ -20,7 +20,7 @@ export class AppComponent {
   baseDomain = '.developer.li';
   basePrefix = 'https://json.geoiplookup.io/';
   kofiUrl = 'https://ko-fi.com/F1F8OBQ5';
-  registrySearchUrl = 'https://freedns.afraid.org/domain/registry/?sort=5&q=developer.li&submit=SEARCH';
+  registrySearchUrl = `https://api.allorigins.win/get?url=${encodeURIComponent('https://freedns.afraid.org/domain/registry/?sort=5&q=developer.li&submit=SEARCH')}`;
   notOwned = 'Dosarrest';
   actualYear = new Date().getFullYear();
   subdomainCount = 0;
