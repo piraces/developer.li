@@ -19,8 +19,8 @@ export class AppComponent {
   subdomain: any;
   baseDomain = '.developer.li';
   basePrefix = 'https://json.geoiplookup.io/';
-  kofiUrl = 'https://ko-fi.com/F1F8OBQ5';
-  registrySearchUrl = `https://api.allorigins.win/get?url=${encodeURIComponent('https://freedns.afraid.org/domain/registry/?sort=5&q=developer.li&submit=SEARCH')}`;
+  liberaPayUrl = 'https://liberapay.com/piraces';
+  registrySearchUrl = `https://api.allorigins.win/get?charset=ISO-8859-1&url=${encodeURIComponent('https://freedns.afraid.org/domain/registry/?sort=5&q=developer.li&submit=SEARCH')}`;
   notOwned = 'Dosarrest';
   actualYear = new Date().getFullYear();
   subdomainCount = 0;
@@ -38,7 +38,7 @@ export class AppComponent {
   }
 
   public supportMe() {
-    this.document.location.href = this.kofiUrl;
+    this.document.location.href = this.liberaPayUrl;
   }
 
   public getActualClass() {
@@ -68,6 +68,7 @@ export class AppComponent {
   public getSubdomainsNumber() {
     this.http.get(this.registrySearchUrl, {responseType: 'text'}).subscribe(
       (data) => {
+        debugger;
         if (data) {
           const matches = data.match(/\([0-9]+\shosts\sin\suse\)/g);
           if (matches && matches.length > 0) {
