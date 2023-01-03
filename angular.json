@@ -25,7 +25,8 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/.well-known/nostr.json"
+              "src/.well-known/nostr.json",
+              "_config.yml"
             ],
             "styles": [
               "src/styles.scss"
@@ -103,7 +104,8 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/.well-known/nostr.json"
+              "src/.well-known/nostr.json",
+              "_config.yml"
             ]
           }
         },

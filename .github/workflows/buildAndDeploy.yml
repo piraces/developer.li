@@ -23,7 +23,7 @@ jobs:
       run: npm run build:prod --if-present
       
     - name: Deploy to Github Pages
-      uses: crazy-max/ghaction-github-pages@v2
+      uses: crazy-max/ghaction-github-pages@v3
       with:
         build_dir: dist/developerli
         fqdn: developer.li
