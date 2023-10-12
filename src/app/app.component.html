@@ -24,32 +24,14 @@
         </p>
       </section>
       <section class="topic">
-        <h2 id="subdomains"><a href="#subdomains">#</a>Subdomains</h2>
+        <h1 class="title"><a href="https://freedns.afraid.org/subdomain/edit.php">Click here to get your own subdomain!</a></h1>
+      </section>
+      <section class="topic">
+        <h2 id="subdomains"><a href="#subdomains">#</a>Current stats</h2>
         <section class="nes-container with-title bottom-margin">
-
-          <h2 class="title">Check for available subdomains:</h2>
-          <div class="nes-field is-inline centered">
-            <input type="url" id="name_field" [ngClass]="getActualClass()" [(ngModel)]="subdomain"
-              (keydown)="changeInput()" (ngModelChange)="domainAvailable = false" (keyup.enter)="checkAvailability()" required>
-            <label for="name_field">.developer.li</label>
-          </div>
-          <div *ngIf="domainAvailableChecked == false">
-            <p style="color: red">{{subdomain}}.developer.li is not available</p>
-          </div>
-          <div *ngIf="domainAvailableChecked == true">
-            <p style="color: green">{{subdomain}}.developer.li is available!</p>
-          </div>
-          <div class="centered top-margin bottom-margin" *ngIf="checkingAvailability">
-            <progress class="nes-progress" [value]="progress" max="100"></progress>
-          </div>
-          <div class="centered top-margin bottom-margin" *ngIf="!domainAvailable">
-            <button type="button" [disabled]="checkingAvailability" [ngClass]="{'is-disabled': checkingAvailability}" class="nes-btn is-primary" (click)="checkAvailability()">Check availability</button>
-          </div>
-          <div class="centered top-margin bottom-margin" *ngIf="domainAvailable">
-            <button type="button" class="nes-btn is-success"
-              onclick="location.href='https://freedns.afraid.org/'">Hurray! Reserve subdomain</button>
-          </div>
-          <p [hidden]="subdomainCount === 0">{{subdomainCount}} subdomains registered and counting!</p>
+          <h2 [hidden]="subdomainCount === 0">
+            {{subdomainCount}} subdomains registered and counting! <i class="nes-icon trophy is-medium"></i>
+          </h2>
           <p>Powered by FreeDNS: <a target="_blank" href="https://freedns.afraid.org/">freedns.afraid.org</a></p>
           <p>Check out more available domains in their <a target="_blank"
               href="https://freedns.afraid.org/domain/registry/">registry!</a></p>
