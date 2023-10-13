@@ -14,8 +14,6 @@ It offers a simple check tool for available subdomains and a short tutorial abou
 
 Feel free to submit a PR modifying the file [.well-known/nostr.json](https://github.com/piraces/developer.li/blob/main/src/.well-known/nostr.json) with your desired name and public key to register yourself and verify for `developer.li`.
 
-Also feel free to add the relay for `developer.li`: `wss://nostr.developer.li`.
-
 # Contributing
 
 Please feel free to contribute to this project in any way you want: open an issue, submit your own PR or propose a functionality.
